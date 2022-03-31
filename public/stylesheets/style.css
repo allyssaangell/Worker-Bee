@@ -1,0 +1,28 @@
+:root {
+    --main-color: #ffffbf;  /* rgb(251,251,187) */
+    --Secondary-color: #1f1a12; /* rgb(31,26,18) */
+}
+
+*   {
+    font-family: 'Bungee', cursive;
+    background-color: var(--main-color);
+}
+
+p {
+    color: var(--Secondary-color);
+    font-size: 64px;
+}
+
+.btn {
+    color: var(--main-color);
+    background-color: var(--Secondary-color);
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    border: 1px solid var(--Secondary-color);
+}
+
+footer {
+    font-size: 12px;
+}
