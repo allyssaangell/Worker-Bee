@@ -2,7 +2,7 @@ const { createPromptModule } = require("inquirer");
 const Timesheet = require("./Timesheet");
 
 
-User.hasMany(Timesheet, {
+User.hasMany(Timesheet, { 
     foreignKey: "",
   });
   
