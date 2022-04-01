@@ -16,11 +16,11 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    employee_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    employee_id: {
+    // employee_name: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
