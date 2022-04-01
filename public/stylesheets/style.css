@@ -26,3 +26,39 @@ p {
 footer {
     font-size: 12px;
 }
+
+/* time-entry css starts here*/
+
+#content-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#content-wrapper-section {
+    display:flex;
+    flex-direction: column;
+    padding: 5em;
+    border: 0.5em solid #000;
+    border-radius: 1em;
+    box-shadow: 6px 6px 19px rgba(128,128,128,0.7);
+}
+.start-ui {
+    width: 100%;
+    padding: 1em 2em;
+    margin: 0.5em 0;
+    text-align: center;
+    font-size: 1.25em;
+}
+#manual {
+    border: none;
+    color: rgb(20, 104, 213);
+    font-size: .8em;
+    transition: all 200ms linear;
+    position:relative;
+}
+#manual:hover {
+    color:rgb(0,0,255);
+}
+/* time-entry css endss here*/
