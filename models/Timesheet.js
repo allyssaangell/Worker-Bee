@@ -24,6 +24,14 @@ Timesheet.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    // foreign key reference
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
