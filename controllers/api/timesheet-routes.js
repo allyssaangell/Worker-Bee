@@ -7,11 +7,12 @@ router.post("/", withAuth, async (req, res) => {
 
   try {
     const newTimesheet = await Timesheet.create({
-      user_id: req.session.user_id,
+      id: req.body.user_id,
       week_start: req.body.week_start,
       timesheet: JSON.stringify(req.body.timesheet),
     });
     res.status(200).json("You successfully submitted a timesheet!");
+    console.log(newTimesheet.toJSON());
   } catch (err) {
     res.status(400).json(err);
   }
