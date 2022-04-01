@@ -1,19 +1,13 @@
-const { createPromptModule } = require("inquirer");
 const Timesheet = require("./Timesheet");
 const User = require("./User");
 
 User.hasMany(Timesheet, {
-  foreignKey: "",
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
-Post.belongsTo(Timesheet, {
-  foreignKey: "",
+Timesheet.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
-User.belongsToMany(Post, {
-  through: Vote,
-  as: "",
-  foreignKey: "",
-});
-
-createPromptModule.exports = { Timesheet };
+module.exports = { User, Timesheet };
