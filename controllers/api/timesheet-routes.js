@@ -47,20 +47,32 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", withAuth, async (req, res) => {
-  console.log(" NEW INBOUND TIMESHEET: ", req.body);
-
-  try {
-    const newTimesheet = await Timesheet.create({
-      id: req.body.user_id,
-      week_start: req.body.week_start,
-      timesheet: JSON.stringify(req.body.timesheet),
+router.post("/", async (req, res) => {
+  //router.post("/", withAuth, async (req, res) => {
+  console.log(" NEW INBOUND TIMESHEET: ");
+  // console.log(" NEW INBOUND TIMESHEET: ", req.body);
+  Timesheet.create({
+    id: req.body.user_id,
+    week_start: req.body.week_start,
+    timesheet: JSON.stringify(req.body.timesheet),
+  })
+    .then((dbTimesheetData) => res.json(dbTimesheetData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-    res.status(200).json("You successfully submitted a timesheet!");
-    console.log(newTimesheet.toJSON());
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    // COMMENTED OUT TO CREATE THE POST SUCCESSFULLY
+  // try {
+  //   const newTimesheet = await Timesheet.create({
+  //     id: req.body.user_id,
+  //     week_start: req.body.week_start,
+  //     timesheet: JSON.stringify(req.body.timesheet),
+  //   });
+  //   res.status(200).json("You successfully submitted a timesheet!");
+  //   console.log(newTimesheet.toJSON());
+  // } catch (err) {
+  //   res.status(400).json(err);
+  // }
 });
 
 router.delete("/:id", (req, res) => {
