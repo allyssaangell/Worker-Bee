@@ -1,9 +1,11 @@
 :root {
-    --main-color: #ffffbf;  /* rgb(251,251,187) */
-    --Secondary-color: #1f1a12; /* rgb(31,26,18) */
+    --main-color: #ffffbf;
+    /* rgb(251,251,187) */
+    --Secondary-color: #1f1a12;
+    /* rgb(31,26,18) */
 }
 
-*   {
+* {
     font-family: 'Bungee', cursive;
     background-color: var(--main-color);
 }
@@ -36,14 +38,16 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 #content-wrapper-section {
-    display:flex;
+    display: flex;
     flex-direction: column;
     padding: 5em;
     border: 0.5em solid #000;
     border-radius: 1em;
-    box-shadow: 6px 6px 19px rgba(128,128,128,0.7);
+    box-shadow: 6px 6px 19px rgba(128, 128, 128, 0.7);
 }
+
 .start-ui {
     width: 100%;
     padding: 1em 2em;
@@ -51,14 +55,105 @@ footer {
     text-align: center;
     font-size: 1.25em;
 }
+
 #manual {
     border: none;
     color: rgb(20, 104, 213);
     font-size: .8em;
     transition: all 200ms linear;
-    position:relative;
+    position: relative;
 }
+
 #manual:hover {
-    color:rgb(0,0,255);
+    color: rgb(0, 0, 255);
 }
+
 /* time-entry css endss here*/
+
+/* SignUp, Submit, ViewTime CSS starts here */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top-nav {
+    width: 90vw;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.3em solid #000;
+}
+
+#top-nav-h1 {
+    margin-right: 4em;
+    font-size: 18px;
+}
+
+#log-out {
+    font-size: 18px;
+    margin-left: 1em;
+}
+
+h6 {
+    margin: 0 1em;
+    text-align: center;
+    font-size: 0.75em;
+    transition: all 200ms linear;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+
+#top-nav-right {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+#signup-form {
+    margin: 2em auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.3em solid #000;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 6px 6px 19px rgba(128, 128, 128, 0.7);
+}
+#submit-form {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.3em solid #000;
+    padding: 0 1em;
+    border-radius: 1em;
+    box-shadow: 6px 6px 19px rgba(128, 128, 128, 0.7);
+}
+#signup-submit:hover {
+    background-color: rgb(20, 104, 213);
+}
+#signup-h1 {
+    margin: 1em 0 2em 0;
+}
+#submit-h1 {
+    margin: 1em 0 1em 0;
+}
+
+a:hover h6.top-links{
+    color: rgb(20, 104, 213);
+}
+#workweek {
+    margin-bottom: 1em;
+}
+#totalhours {
+    color: red;
+}
+
+/* SignUp, Submit, ViewTime CSS ends here */
