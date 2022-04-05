@@ -1,24 +1,42 @@
-<section class="sign-in-page">
-    <div class="form-heading">
-        <h1>Sign Up</h1>
-    </div>
-    <div class="form-section">
-        <form class="signup-form">
-            <div>
-                <label for="email-signup">Enter a Email</label>
-                <input type="text" class="entry-field" id="email-signup" />
-            </div>
-            <div>
-                <label for="password-signup">Enter a password</label>
-                <input type="password" class="entry-field" id="password-signup" />
-            </div>
-            <div>
-                <button type="submit" class="login-signup-btn">Sign Up!</button>
-            </div>
-        </form>
-    </div>
 
-    <a href="/login" class="login-link">log in instead</a>
+      <div id="signup-form">
+        <h3 id="signup-h1">Sign Up</h3>
+        <form>
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="inputFirstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="inputFirstName" />
+            </div>
+            <div class="mb-3 col">
+              <label for="inputLastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="inputLastName" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="inputUserName" class="form-label">Username</label>
+              <input type="text" class="form-control" id="inpitUserName" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col">
+              <label for="inputPassword" class="form-label">Password</label>
+              <input type="text" class="form-control" id="inputPassword" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-6">
+              <button
+                type="submit"
+                class="btn btn-primary col-6"
+                id="signup-submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
 </section>
 
 <script src="/javascript/signup.js"></script>
