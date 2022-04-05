@@ -73,4 +73,8 @@ router.get("/viewtime", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   res.render("viewtime");
 });
+
+router.get("/viewdates", (req, res) => {
+  res.render("viewdates")
+})
 module.exports = router;
