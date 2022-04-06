@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   console.log("someone visited root route!");
   // Pass serialized data and session flag into template
-  res.render("homepage"});
+  res.render("homepage");
 });
 // router.get("/project/:id", async (req, res) => {
 //   try {
