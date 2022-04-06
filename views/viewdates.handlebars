@@ -22,12 +22,23 @@
 
   <body>
     <div class="container-fluid">
-      {{#each timesheet as |timesheet|}}
+
+        {{!-- <div class="row">
+            {{id}},
+            {{week_start}},
+            {{date_created}}
+        </div> --}}
+
+      {{#each timesheetsData as |timesheet|}}
         <div class="row">
             <div>
 
-                {{> }}
-                
+                <a href="/view/timesheet/{{timesheet.id}}">
+                <p>{{timesheet.weeks_start}}</p>
+                <p>{{timesheet.date_created}}</p>
+                <p>{{timesheet.user_id}}</p>
+                <p>{{timesheet.timesheet}}</p>
+                </a>
             </div>
 
         </div>

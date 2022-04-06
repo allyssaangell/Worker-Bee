@@ -52,9 +52,9 @@ router.post("/", async (req, res) => {
   console.log(" NEW INBOUND TIMESHEET: ");
   // console.log(" NEW INBOUND TIMESHEET: ", req.body);
   Timesheet.create({
-    id: req.body.user_id,
     week_start: req.body.week_start,
     timesheet: JSON.stringify(req.body.timesheet),
+    user_id: req.session.user_id
   })
     .then((dbTimesheetData) => res.json(dbTimesheetData))
     .catch((err) => {

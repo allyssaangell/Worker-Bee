@@ -65,7 +65,7 @@
     <section id="top-nav-right">
       <a href="/viewdates"><h6 class="top-links">View <br />Time Card</h6></a>
       <a href="/profile"><h6 class="top-links">Submit <br />Time Card</h6></a>
-      {{#if req.session.logged_in}}
+      {{#if logged_in}}
       <a><h3 id="log-out">Log Out</h3></a>
       {{else}}
       
@@ -76,8 +76,8 @@
   {{{body}}}
  </div>
   <!-- Render script for logged in users only -->
-  {{#if req.session.logged_in}}
-  <script src="/js/logout.js"></script>
+  {{#if logged_in}}
+  <script src="/javascript/logout.js"></script>
   {{/if}}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
