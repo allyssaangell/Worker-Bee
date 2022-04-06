@@ -27,45 +27,53 @@ const submitTimeCard = async (event) => {
     console.log(sundayInEl.value);
     console.log(sundayOutEl.value);
 
+    let postBody = { 
+
+        week_start: "4/5",
+        timesheet: {
+        "sunday": {
+            "in": sundayInEl,
+            "out": sundayOutEl
+        },
+        "monday": {
+            "in": mondayInEl,
+            "out": mondayOutEl
+        },
+        "tuesday": {
+            "in": tuesdayInEl,
+            "out": tuesdayOutEl
+        },
+        "wednesday": {
+            "in": wednesdayInEl,
+            "out": wednesdayOutEl
+        },
+        "thursday": {
+            "in": thursdayInEl,
+            "out": thursdayOutEl
+        },
+        "friday": {
+            "in": fridayInEl,
+            "out": fridayOutEl
+        },
+        "saturday": {
+            "in": saturdayInEl,
+            "out": saturdayOutEl
+        }
+        }
+    }
+
+    console.log(postBody);
+
     const response = await fetch("/api/timesheet/", {
         method: "POST",
-        body: JSON.stringify({ 
-            "sunday": {
-                "in": sundayInEl,
-                "out": sundayOutEl
-            },
-            "monday": {
-                "in": mondayInEl,
-                "out": mondayOutEl
-            },
-            "tuesday": {
-                "in": tuesdayInEl,
-                "out": tuesdayOutEl
-            },
-            "wednesday": {
-                "in": wednesdayInEl,
-                "out": wednesdayOutEl
-            },
-            "thursday": {
-                "in": thursdayInEl,
-                "out": thursdayOutEl
-            },
-            "friday": {
-                "in": fridayInEl,
-                "out": fridayOutEl
-            },
-            "saturday": {
-                "in": saturdayInEl,
-                "out": saturdayOutEl
-            }
-        }),
+        body: JSON.stringify(postBody),
         headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
         // If successful, redirect the browser to the profile page
         alert("response is ok!")
-        document.location.replace("/profile");
+        document.location.replace("/viewdates");
     } else {
         alert(response.statusText);
     }

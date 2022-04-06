@@ -74,7 +74,45 @@ router.get("/viewtime", (req, res) => {
   res.render("viewtime");
 });
 
-router.get("/viewdates", (req, res) => {
-  res.render("viewdates")
+router.get("/viewdates", async (req, res) => {
+
+  try {
+  const timesheetsData = await Timesheet.findAll({ 
+    where: { user_id: req.session.user_id },
+    raw: true
+  });
+
+  res.render("viewdates", {
+    timesheetsData
+  })
+
+  }
+  catch(error) {
+    console.log(error)
+    res.status(500).json(error);
+  }
 })
+
+router.get("/view/timesheet/:id", async (req, res) => {
+
+  try {
+  const timesheetData = await Timesheet.findOne({ 
+    where: { id: req.params.id },
+    raw: true
+  });
+
+  // parse as json == const timesheet JSON.parse(timesheetData.timesheet)
+  res.render("viewOneTimesheet", {
+    timesheetData
+    // supply each key in here
+  })
+
+  }
+  catch(error) {
+    console.log(error)
+    res.status(500).json(error);
+  }
+})
+
+
 module.exports = router;
