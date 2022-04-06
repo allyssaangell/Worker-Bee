@@ -66,7 +66,7 @@
       <a href="/viewdates"><h6 class="top-links">View <br />Time Card</h6></a>
       <a href="/profile"><h6 class="top-links">Submit <br />Time Card</h6></a>
       {{#if logged_in}}
-      <a><h3 id="log-out">Log Out</h3></a>
+      <a><h6 class="top-links" id="log-out">Log Out</h6></a>
       {{else}}
       
       {{/if}}
@@ -74,10 +74,11 @@
   </header>
 
   {{{body}}}
+  
  </div>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
-  <script src="/javascript/logout.js"></script>
+  <script src="./javascript/logout.js"></script>
   {{/if}}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
