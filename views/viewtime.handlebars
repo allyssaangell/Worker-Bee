@@ -1,9 +1,6 @@
-
-
-    <div class="container-fluid">
-        <div id="submit-form">
-            <h3 id="submit-h1">View Time Cards</h3>
-           
+<div id="submit-form">
+            <h3 id="submit-h1">View Time Card</h3>
+            <h4 id="workweek">Week of: <span>2/13 2/19</span></h4>
             <form class="container">
                 <div class="row">
                     <div class="col-md-3"></div>
@@ -81,17 +78,14 @@
                     </div>
                     <div class="col-md-3">0.0</div>
                 </div>
-                <div class="row d-flex align-items-center mt-4 mb-3">
+                <div class="row d-flex align-items-center mt-4">
                     <div class="col-md-3"></div>
-                    <div class="col-md-3">
-                        <div>Week of: <span>2/13 - 2/19</span></div>
+                    <div class="mb-3 col-md-3">
+                        <button type="submit" class="btn btn-primary" id="submit-submit">update</button>
                     </div>
-                    <div class="col-md-6">
-                        <div>
-                        Total Hours worked: <span id="totalhours">0.0</span>
-                    </div>
-                    </div>
+                    <div class="col">Total Hours worked: <span id="totalhours">0.0</span></div>
                 </div>
             </form>
         </div>
-    </div>
+
+<script src="/javascript/submit.js"></script>

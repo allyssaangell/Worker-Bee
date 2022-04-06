@@ -69,12 +69,14 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/viewtime", (req, res) => {
+router.get("/viewtime", withAuth, (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  res.render("viewtime");
+  res.render("viewtime", {
+    logged_in: true
+  });
 });
 
-router.get("/viewdates", async (req, res) => {
+router.get("/viewdates", withAuth, async (req, res) => {
 
   try {
   const timesheetsData = await Timesheet.findAll({ 
@@ -83,6 +85,7 @@ router.get("/viewdates", async (req, res) => {
   });
 
   res.render("viewdates", {
+    logged_in: true,
     timesheetsData
   })
 
@@ -93,26 +96,50 @@ router.get("/viewdates", async (req, res) => {
   }
 })
 
-router.get("/view/timesheet/:id", async (req, res) => {
+// router.get("/view/timesheet/:id", async (req, res) => {
 
-  try {
-  const timesheetData = await Timesheet.findOne({ 
-    where: { id: req.params.id },
-    raw: true
-  });
+//   try {
+//   const timesheetData = await Timesheet.findOne({ 
+//     where: { id: req.params.id },
+//     raw: true
+//   });
 
-  // parse as json == const timesheet JSON.parse(timesheetData.timesheet)
-  res.render("viewOneTimesheet", {
-    timesheetData
-    // supply each key in here
+//   // parse as json == const timesheet JSON.parse(timesheetData.timesheet)
+//   res.render("viewtime", {
+//     timesheetData
+//     // supply each key in here
+//   })
+//   }
+//   catch(error) {
+//     console.log(error)
+//     res.status(500).json(error);
+//   }
+// })
+
+router.get('/viewtime/:id', withAuth, (req, res) => {
+  Timesheet.findOne({
+      where: {
+          id: req.params.id
+      }  
   })
+  .then(timesheetsData => {
+      if (!timesheetsData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+      }
 
-  }
-  catch(error) {
-    console.log(error)
-    res.status(500).json(error);
-  }
-})
+      // serialize the data
+      const timesheet = timesheetsData.get({ plain: true });
 
+      // pass data to template
+      res.render("viewtime", {
+        logged_in: true
+      });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
 
 module.exports = router;
