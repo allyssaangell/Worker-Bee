@@ -1,23 +1,23 @@
-const sundayInEl = document.querySelector("#inputInSunday").value.trim();
-const sundayOutEl = document.querySelector("#inputOutSunday").value.trim();
+const sundayInEl = document.getElementById("inputInSunday");
+const sundayOutEl = document.getElementById("inputOutSunday");
 
-const mondayInEl = document.querySelector("#inputInMonday").value.trim();
-const mondayOutEl = document.querySelector("#inputOutMonday").value.trim();
+const mondayInEl = document.getElementById("inputInMonday");
+const mondayOutEl = document.getElementById("inputOutMonday");
 
-const tuesdayInEl = document.querySelector("#inputInTuesday").value.trim();
-const tuesdayOutEl = document.querySelector("#inputOutTuesday").value.trim();
+const tuesdayInEl = document.getElementById("inputInTuesday");
+const tuesdayOutEl = document.getElementById("inputOutTuesday");
 
-const wednesdayInEl = document.querySelector("#inputInWednesday").value.trim();
-const wednesdayOutEl = document.querySelector("#inputOutWednesday").value.trim();
+const wednesdayInEl = document.getElementById("inputInWednesday");
+const wednesdayOutEl = document.getElementById("inputOutWednesday");
 
-const thursdayInEl = document.querySelector("#inputInThursday").value.trim();
-const thursdayOutEl = document.querySelector("#inputOutThursday").value.trim();
+const thursdayInEl = document.getElementById("inputInThursday");
+const thursdayOutEl = document.getElementById("inputOutThursday");
 
-const fridayInEl = document.querySelector("#inputInFriday").value.trim();
-const fridayOutEl = document.querySelector("#inputOutFriday").value.trim();
+const fridayInEl = document.getElementById("inputInFriday");
+const fridayOutEl = document.getElementById("inputOutFriday");
 
-const saturdayInEl = document.querySelector("#inputInSaturday").value.trim();
-const saturdayOutEl = document.querySelector("#inputOutSaturday").value.trim();
+const saturdayInEl = document.getElementById("inputInSaturday");
+const saturdayOutEl = document.getElementById("inputOutSaturday");
 
 
 
@@ -32,32 +32,32 @@ const submitTimeCard = async (event) => {
         week_start: "4/5",
         timesheet: {
         "sunday": {
-            "in": sundayInEl,
-            "out": sundayOutEl
+            "in": sundayInEl.value,
+            "out": sundayOutEl.value
         },
         "monday": {
-            "in": mondayInEl,
-            "out": mondayOutEl
+            "in": mondayInEl.value,
+            "out": mondayOutEl.value
         },
         "tuesday": {
-            "in": tuesdayInEl,
-            "out": tuesdayOutEl
+            "in": tuesdayInEl.value,
+            "out": tuesdayOutEl.value
         },
         "wednesday": {
-            "in": wednesdayInEl,
-            "out": wednesdayOutEl
+            "in": wednesdayInEl.value,
+            "out": wednesdayOutEl.value
         },
         "thursday": {
-            "in": thursdayInEl,
-            "out": thursdayOutEl
+            "in": thursdayInEl.value,
+            "out": thursdayOutEl.value
         },
         "friday": {
-            "in": fridayInEl,
-            "out": fridayOutEl
+            "in": fridayInEl.value,
+            "out": fridayOutEl.value
         },
         "saturday": {
-            "in": saturdayInEl,
-            "out": saturdayOutEl
+            "in": saturdayInEl.value,
+            "out": saturdayOutEl.value
         }
         }
     }
