@@ -1,5 +1,3 @@
-
-
 const sundayInEl = document.getElementById("inputInSunday");
 const sundayOutEl = document.getElementById("inputOutSunday");
 
@@ -67,7 +65,7 @@ const submitTimeCard = async (event) => {
     console.log(postBody);
 
     const response = await fetch("/api/timesheet/", {
-        method: "POST",
+        method: "PUT",
         body: JSON.stringify(postBody),
         headers: { "Content-Type": "application/json" },
     });

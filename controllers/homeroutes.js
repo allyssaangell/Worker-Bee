@@ -130,10 +130,11 @@ router.get('/viewtime/:id', withAuth, (req, res) => {
 
       // serialize the data
       const timesheet = timesheetsData.get({ plain: true });
-
+      const timesheet1 = JSON.parse(timesheet.timesheet);
       // pass data to template
       res.render("viewtime", {
-        logged_in: true
+        logged_in: true,
+        timesheet1,
       });
   })
   .catch(err => {

@@ -6,86 +6,86 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-3">IN</div>
                     <div class="col-md-3">OUT</div>
-                    <div class="col-md-3">Total Hours</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Sunday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInSunday">
+                        <input type="text" value="{{timesheet1.sunday.in}}" class="form-control" id="inputInSunday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutSunday">
+                        <input type="text" value="{{timesheet1.sunday.out}}" class="form-control" id="inputOutSunday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Monday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInMonday">
+                        <input type="text" value="{{timesheet1.monday.in}}" class="form-control" id="inputInMonday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutMonday">
+                        <input type="text" value="{{timesheet1.monday.out}}" class="form-control" id="inputOutMonday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Tuesday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInTuesday">
+                        <input type="text" value="{{timesheet1.tuesday.in}}" class="form-control" id="inputInTuesday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutTuesday">
+                        <input type="text" value="{{timesheet1.tuesday.out}}" class="form-control" id="inputOutTuesday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Wednesday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInWednesday">
+                        <input type="text" value="{{timesheet1.wednesday.in}}" class="form-control" id="inputInWednesday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutWednesday">
+                        <input type="text" value="{{timesheet1.wednesday.out}}" class="form-control" id="inputOutWednesday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Thursday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInThursday">
+                        <input type="text" value="{{timesheet1.thursday.in}}" class="form-control" id="inputInThursday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutThursday">
+                        <input type="text" value="{{timesheet1.thursday.out}}" class="form-control" id="inputOutThursday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Friday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInFriday">
+                        <input type="text" value="{{timesheet1.friday.in}}" class="form-control" id="inputInFriday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutFriday">
+                        <input type="text" value="{{timesheet1.friday.out}}" class="form-control" id="inputOutFriday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row my-2">
                     <div class="col-md-3">Saturday</div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputInSaturday">
+                        <input type="text" value="{{timesheet1.saturday.in}}" class="form-control" id="inputInSaturday">
                     </div>
                     <div class="col-md-3">
-                        <input type="time" class="form-control" id="inputOutSaturday">
+                        <input type="text" value="{{timesheet1.saturday.out}}" class="form-control" id="inputOutSaturday">
                     </div>
-                    <div class="col-md-3">0.0</div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row d-flex align-items-center mt-4">
                     <div class="col-md-3"></div>
                     <div class="mb-3 col-md-3">
-                        <button type="submit" class="btn btn-primary" id="submit-submit">update</button>
+                        <button type="submit" class="btn btn-primary" id="update">update</button>
                     </div>
-                    <div class="col">Total Hours worked: <span id="totalhours">0.0</span></div>
+                    <div class="col"> <span id="totalhours"></span></div>
                 </div>
             </form>
         </div>
 
-<script src="/javascript/submit.js"></script>
+<script src="/javascript/update.js"></script>

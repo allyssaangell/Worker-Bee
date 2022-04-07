@@ -54,14 +54,14 @@ router.post("/", async (req, res) => {
   Timesheet.create({
     week_start: req.body.week_start,
     timesheet: JSON.stringify(req.body.timesheet),
-    user_id: req.session.user_id
+    user_id: req.session.user_id,
   })
     .then((dbTimesheetData) => res.json(dbTimesheetData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-    // COMMENTED OUT TO CREATE THE POST SUCCESSFULLY
+  // COMMENTED OUT TO CREATE THE POST SUCCESSFULLY
   // try {
   //   const newTimesheet = await Timesheet.create({
   //     id: req.body.user_id,
@@ -73,6 +73,22 @@ router.post("/", async (req, res) => {
   // } catch (err) {
   //   res.status(400).json(err);
   // }
+});
+
+router.put("/:id", async (req, res) => {
+  //router.post("/", withAuth, async (req, res) => {
+  console.log(" NEW INBOUND TIMESHEET: ");
+  // console.log(" NEW INBOUND TIMESHEET: ", req.body);
+  Timesheet.findOne({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbTimesheetData) => res.json(dbTimesheetData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.delete("/:id", (req, res) => {
