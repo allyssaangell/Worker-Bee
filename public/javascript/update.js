@@ -23,7 +23,7 @@ const saturdayOutEl = document.getElementById("inputOutSaturday");
 
 const submitTimeCard = async (event) => {
     event.preventDefault();
-
+    const userIdEl = document.getElementById("update")
     console.log(sundayInEl.value);
     console.log(sundayOutEl.value);
 
@@ -62,9 +62,12 @@ const submitTimeCard = async (event) => {
         }
     }
 
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
+    console.log(id);
     console.log(postBody);
-
-    const response = await fetch("/api/timesheet/", {
+    const response = await fetch(`/api/timesheet/${id}`, {
         method: "PUT",
         body: JSON.stringify(postBody),
         headers: { "Content-Type": "application/json" },

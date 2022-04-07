@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Project, User, Timesheet } = require("../models");
 const withAuth = require("../utils/auth");
 
+
 router.get("/", async (req, res) => {
   console.log("someone visited root route!");
   // Pass serialized data and session flag into template
@@ -134,7 +135,7 @@ router.get('/viewtime/:id', withAuth, (req, res) => {
       // pass data to template
       res.render("viewtime", {
         logged_in: true,
-        timesheet1,
+        timesheet1
       });
   })
   .catch(err => {

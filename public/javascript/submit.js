@@ -1,5 +1,6 @@
 
 
+
 const sundayInEl = document.getElementById("inputInSunday");
 const sundayOutEl = document.getElementById("inputOutSunday");
 
@@ -31,7 +32,7 @@ const submitTimeCard = async (event) => {
 
     let postBody = { 
         
-        week_start: "4/5",
+        week_start: "4/3",
         timesheet: {
         "sunday": {
             "in": sundayInEl.value,
@@ -66,9 +67,13 @@ const submitTimeCard = async (event) => {
 
     console.log(postBody);
 
+    // const title = document.querySelector('input[name="post-title"]').value;
+
+  
+
     const response = await fetch("/api/timesheet/", {
         method: "POST",
-        body: JSON.stringify(postBody),
+        body: JSON.stringify(postBody), 
         headers: { "Content-Type": "application/json" },
     });
 

@@ -79,7 +79,11 @@ router.put("/:id", async (req, res) => {
   //router.post("/", withAuth, async (req, res) => {
   console.log(" NEW INBOUND TIMESHEET: ");
   // console.log(" NEW INBOUND TIMESHEET: ", req.body);
-  Timesheet.findOne({
+  Timesheet.update({
+  //   {
+  //     title: req.body.title
+  // },
+   
     where: {
       id: req.params.id,
     },
@@ -95,7 +99,7 @@ router.delete("/:id", (req, res) => {
   Timesheet.destroy({
     where: {
       id: req.params.id,
-    },
+    }
   })
     .then((dbTimesheetData) => {
       if (!dbTimesheetData) {
