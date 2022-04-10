@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CalebLuster/Worker-Bee.git"
+    "url": "git+https://github.com/allyssaangell/Worker-Bee.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CalebLuster/Worker-Bee/issues"
+    "url": "https://github.com/allyssaangell/Worker-Bee/issues"
   },
-  "homepage": "https://github.com/CalebLuster/Worker-Bee#readme",
+  "homepage": "https://github.com/allyssaangell/Worker-Bee#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.3",
